@@ -5,7 +5,7 @@
     "price": 48,
     "category": "Appetizer",
     "description": "Delicate foie gras with cherry gastrique and toasted brioche",
-    "image": "/images/pan-seared-foie-gras.jpg",
+    "image": "src/assets/images/pan-seared-foie-gras.jpg",
     "slug": "pan-seared-foie-gras"
   },
   {
