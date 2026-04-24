@@ -1,0 +1,350 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
+---
+
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a
+        class="font-(family-name:--font-playfair) font-bold text-2xl flex gap-3 items-center text-[#d4af37] transition-colors"
+        href="/"
+      >
+        <Image src={logo} alt="Logo" width={50} height={50} />
+        Epicure
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a
+          class="text-sm font-medium hover:text-accent transition-colors nav-links"
+          href="/">Home</a
+        >
+        <a
+          class="text-sm font-medium hover:text-accent transition-colors nav-links"
+          href="/menu">Menu</a
+        >
+        <a
+          class="text-sm font-medium hover:text-accent transition-colors nav-links"
+          href="/about">About</a
+        >
+      </div>
+      <button
+        id="menu-btn"
+        class="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors relative z-50"
+        aria-label="Toggle menu"
+      >
+        <svg
+          id="menu-icon"
+          class="w-6 h-6 text-white transition-transform duration-300"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          id="close-icon"
+          class="w-6 h-6 text-white hidden transition-transform duration-300"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Full Screen Mobile Menu-->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-40 md:hidden invisible transition-all duration-500 ease-out"
+>
+  <div
+    class="relative w-full h-full bg-linear-to-br from-black via-gray-900 to-black"
+  >
+    <!-- Decorative elements -->
+    <div
+      class="absolute top-0 left-0 w-64 h-64 bg-[#d4af37]/5 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 right-0 w-96 h-96 bg-[#d4af37]/5 rounded-full blur-3xl"
+    >
+    </div>
+
+    <!-- Menu content -->
+    <div
+      id="menu-content"
+      class="relative z-10 flex flex-col items-center justify-center h-full px-6"
+    >
+      <!-- Elegant divider line -->
+      <div
+        class="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-px h-32 bg-linear-to-b from-transparent via-[#d4af37]/30 to-transparent"
+      >
+      </div>
+
+      <div class="space-y-8 text-center">
+        <a
+          class="group block text-5xl md:text-6xl font-light tracking-wide text-white hover:text-[#d4af37] transition-all duration-300 transform hover:scale-105 menu-link"
+          href="/"
+        >
+          <span class="inline-block">Home</span>
+          <span
+            class="block h-px w-0 group-hover:w-full bg-[#d4af37] transition-all duration-300 mx-auto mt-2"
+          ></span>
+        </a>
+        <a
+          class="group block text-5xl md:text-6xl font-light tracking-wide text-white hover:text-[#d4af37] transition-all duration-300 transform hover:scale-105 menu-link"
+          href="/menu"
+        >
+          <span class="inline-block">Menu</span>
+          <span
+            class="block h-px w-0 group-hover:w-full bg-[#d4af37] transition-all duration-300 mx-auto mt-2"
+          ></span>
+        </a>
+        <a
+          class="group block text-5xl md:text-6xl font-light tracking-wide text-white hover:text-[#d4af37] transition-all duration-300 transform hover:scale-105 menu-link"
+          href="/about"
+        >
+          <span class="inline-block">About</span>
+          <span
+            class="block h-px w-0 group-hover:w-full bg-[#d4af37] transition-all duration-300 mx-auto mt-2"
+          ></span>
+        </a>
+      </div>
+
+      <!-- Footer text -->
+      <div class="absolute bottom-8 left-0 right-0 text-center">
+        <p class="text-gray-500 text-sm tracking-wider">EPICURE</p>
+        <p class="text-gray-600 text-xs mt-2">Fine Dining Experience</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .nav-links {
+    color: white;
+    transition: all 0.2s ease-in-out;
+  }
+  .nav-links:hover {
+    color: #d4af37;
+  }
+
+  /* Animation classes */
+  .mobile-menu-open {
+    visibility: visible !important;
+    animation: slideInFromRight 0.4s ease-out forwards !important;
+  }
+
+  .mobile-menu-closing {
+    visibility: visible !important;
+    animation: slideOutToRight 0.3s ease-in forwards !important;
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      visibility: visible;
+    }
+    100% {
+      transform: translateX(0);
+      visibility: visible;
+    }
+  }
+
+  @keyframes slideOutToRight {
+    0% {
+      transform: translateX(0);
+      visibility: visible;
+    }
+    100% {
+      transform: translateX(100%);
+      visibility: hidden;
+    }
+  }
+
+  /* Stagger animation for menu items - only on open */
+  .mobile-menu-open .space-y-8 a {
+    animation: fadeInUp 0.4s ease-out forwards;
+    opacity: 0;
+  }
+
+  .mobile-menu-open .space-y-8 a:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .mobile-menu-open .space-y-8 a:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .mobile-menu-open .space-y-8 a:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  /* Hide menu items immediately when closing */
+  .mobile-menu-closing .menu-link,
+  .mobile-menu-closing .space-y-8 a {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .mobile-menu-closing .menu-content,
+  .mobile-menu-closing .space-y-8 {
+    visibility: hidden !important;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const navbar = document.getElementById("navbar");
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+    const closeIcon = document.getElementById("close-icon");
+    const menuContent = document.getElementById("menu-content");
+
+    let isAnimating = false;
+
+    // Scroll effect for navbar background
+    function handleScroll() {
+      if (!navbar) return;
+      if (window.scrollY > 10) {
+        navbar.style.backgroundColor = "#000";
+        navbar.style.boxShadow = "0 2px 20px rgba(0,0,0,0.6)";
+        navbar.style.borderBottom = "1px solid #333333";
+      } else {
+        navbar.style.backgroundColor = "transparent";
+        navbar.style.boxShadow = "none";
+        navbar.style.borderBottom = "none";
+      }
+    }
+
+    // Open mobile menu
+    function openMenu() {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      // Reset visibility before opening
+      if (menuContent) {
+        menuContent.style.visibility = "visible";
+      }
+
+      mobileMenu?.classList.remove("mobile-menu-closing");
+      mobileMenu?.classList.add("mobile-menu-open");
+      menuIcon?.classList.add("hidden");
+      closeIcon?.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+
+      setTimeout(() => {
+        isAnimating = false;
+      }, 400);
+    }
+
+    // Close mobile menu instantly
+    function closeMenu() {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      // Immediately hide menu content before animation starts
+      if (menuContent) {
+        menuContent.style.visibility = "hidden";
+      }
+
+      mobileMenu?.classList.remove("mobile-menu-open");
+      mobileMenu?.classList.add("mobile-menu-closing");
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+      document.body.style.overflow = "";
+
+      setTimeout(() => {
+        mobileMenu?.classList.remove("mobile-menu-closing");
+        // Reset visibility after closing
+        if (menuContent) {
+          menuContent.style.visibility = "";
+        }
+        isAnimating = false;
+      }, 300);
+    }
+
+    // Toggle mobile menu
+    function toggleMenu() {
+      if (!mobileMenu || !menuIcon || !closeIcon) return;
+
+      if (mobileMenu.classList.contains("mobile-menu-open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+
+    // Handle navigation with instant close
+    function handleNavigation(href: string) {
+      // Immediately hide menu content
+      if (menuContent) {
+        menuContent.style.visibility = "hidden";
+      }
+
+      // Close menu instantly
+      if (mobileMenu?.classList.contains("mobile-menu-open")) {
+        mobileMenu?.classList.remove("mobile-menu-open");
+        mobileMenu?.classList.add("mobile-menu-closing");
+        document.body.style.overflow = "";
+      }
+
+      // Navigate immediately
+      window.location.href = href;
+    }
+
+    // Event listeners
+    if (menuBtn) {
+      menuBtn.addEventListener("click", toggleMenu);
+    }
+
+    // Handle mobile links with instant navigation
+    const mobileLinks = document.querySelectorAll("#mobile-menu a");
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const href = link.getAttribute("href");
+        handleNavigation(href as string);
+      });
+    });
+
+    // Close menu on window resize to desktop
+    window.addEventListener("resize", () => {
+      if (
+        window.innerWidth >= 768 &&
+        mobileMenu?.classList.contains("mobile-menu-open")
+      ) {
+        closeMenu();
+      }
+    });
+
+    // Initial scroll check
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+  });
+</script>

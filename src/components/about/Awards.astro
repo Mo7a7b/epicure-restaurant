@@ -1,0 +1,48 @@
+---
+const awards = [
+  { year: "2026", award: "Michelin Star Award", issuer: "Michelin Guide" },
+  {
+    year: "2025",
+    award: "Best Fine Dining Restaurant",
+    issuer: "Culinary Excellence Awards",
+  },
+  {
+    year: "2024",
+    award: "Chef of the Year",
+    issuer: "International Culinary Association",
+  },
+  {
+    year: "2023",
+    award: "Rising Star Restaurant",
+    issuer: "Gastronomic Review",
+  },
+];
+---
+
+<section class="py-20 bg-[#0a0a0a]">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2
+      class="font-(family-name:--font-playfair) text-4xl flex flex-col items-center gap-5 font-bold text-white mb-12"
+    >
+      Recognition & Awards
+
+      <div class="w-20 h-1 bg-[#d4af37] rounded"></div>
+    </h2>
+
+    <div class="space-y-4">
+      {
+        awards.map(({ year, award, issuer }) => (
+          <div class="flex items-center justify-between p-4 bg-[#1a1a1a] rounded-lg border border-[#333333]">
+            <div class="flex flex-col items-start">
+              <p class="font-(family-name:--font-playfair) font-bold text-white">
+                {award}
+              </p>
+              <p class="text-sm! text-[#a0a0a0]">{issuer}</p>
+            </div>
+            <span class="text-[#d4af37] font-semibold">{year}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

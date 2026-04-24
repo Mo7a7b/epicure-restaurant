@@ -1,11 +1,30 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import FeaturedMenu from "../components/home/FeaturedMenu.astro";
+import MediaText from "../components/MediaText.astro";
+import Testimonials from "../components/home/Testimonials.astro";
+import CallToAction from "../components/home/CallToAction.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Epicure - Home">
+  <Hero
+    title="Welcome to Epicure"
+    subtitle="Experience culinary perfection with exquisite dishes crafted by award-winning chefs — where every plate tells a story."
+    actionButton={true}
+  />
+  <FeaturedMenu />
+  <MediaText
+    title="Our Culinary Philosophy"
+    subtitle="At Epicure, we believe that fine dining is not just about exceptional
+      food, but about creating unforgettable moments. Our chefs source only the
+      finest, freshest ingredients from around the world, combining classical
+      French techniques with contemporary innovation. Each dish is carefully
+      crafted to delight all senses, from the aroma of our signature sauces to
+      the visual presentation on your plate. We pride ourselves on personalizing
+      each dining experience to our guests' preferences."
+    learnMore={true}
+  />
+  <Testimonials />
+  <CallToAction />
 </Layout>

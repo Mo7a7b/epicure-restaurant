@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import MealCard from "../MealCard.tsx";
+
+const menu = await getCollection("menu");
+const featuredMenu = menu.filter((item, index) => index < 3);
+---
+
+<section class="bg-black text-white w-full">
+  <p class="text-[#d4af37] font-bold mt-10">Culinary Excellence</p>
+  <h2 class="font-(family-name:--font-playfair) font-bold">Featured Dishes</h2>
+  <div class="w-20 h-1 bg-[#d4af37] rounded"></div>
+  <div
+    class="flex flex-col md:flex-row justify-evenly items-center gap-5 w-full text-wrap mt-5 mb-20"
+  >
+    {
+      featuredMenu.map((item) => (
+        <MealCard client:load {...item.data} slug={item.data.slug} />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+  }
+</style>

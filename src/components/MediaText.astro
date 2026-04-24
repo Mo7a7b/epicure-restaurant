@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import kitchen from "../assets/images/restaurant-kitchen.jpg";
+interface Props {
+  title: string;
+  subtitle: string;
+  learnMore: boolean;
+}
+
+const { title, subtitle, learnMore } = Astro.props;
+---
+
+<section
+  class="w-full bg-[#1a1a1a] flex flex-col md:flex-row justify-between p-10 py-30"
+>
+  <div class="w-full md:w-[50%] mr-0 md:mr-5">
+    <Image
+      width={600}
+      height={500}
+      quality="max"
+      src={kitchen}
+      alt="Epicure's Kitchen"
+      class="rounded-lg"
+    />
+  </div>
+  <div class="flex flex-col gap-5 items-start w-full md:w-[50%] mt-10 md:mt-0">
+    <div class="w-15 h-1 bg-[#d4af37] rounded"></div>
+    <h2 class="font-(family-name:--font-playfair) font-bold text-white">
+      {title}
+    </h2>
+    <p class="text-[#a0a0a0] max-w-150 leading-8">
+      {subtitle}
+    </p>
+    {learnMore && (
+      <a class="learn-more text-[#d4af37] font-bold" href="/about">
+        Learn more <span>-></span>
+      </a>
+    )}
+  </div>
+</section>
+
+<style>
+  .learn-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+  }
+  .learn-more span {
+    display: inline-block;
+    transition: transform 0.25s ease;
+  }
+  .learn-more:hover span {
+    transform: translateX(6px);
+  }
+</style>

@@ -1,0 +1,147 @@
+---
+import heroImg from "../assets/images/hero-restaurant.jpg";
+import Button from "./ui/button.astro";
+
+interface Props {
+  title: string;
+  subtitle: string;
+  actionButton: boolean;
+}
+
+const { title, subtitle, actionButton } = Astro.props;
+---
+
+<section class="hero" style={`background-image: url('${heroImg.src}');`}>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-title font-(family-name:--font-playfair)">
+      {title}
+    </h1>
+    <p class="hero-subtitle">
+      {subtitle}
+    </p>
+    {actionButton && <Button href="/menu" text="Explore Menu" type="primary" />}
+  </div>
+
+  <a href="#featured" class="scroll-indicator" aria-label="Scroll down">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M12 5v14M5 12l7 7 7-7"></path>
+    </svg>
+  </a>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.6) 60%,
+      rgba(0, 0, 0, 0.82) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    max-width: 760px;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.85rem;
+    font-family: var(--font-geist-mono, monospace);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #d4af37;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  .hero-title {
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-accent {
+    color: #d4af37;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0;
+    animation: fadeUp 0.9s 0.15s ease both;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.5);
+    animation: bounce 2s infinite;
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+  .scroll-indicator:hover {
+    color: #d4af37;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(8px);
+    }
+  }
+</style>

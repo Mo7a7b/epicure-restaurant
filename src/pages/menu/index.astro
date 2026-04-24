@@ -1,0 +1,45 @@
+---
+import Hero from "../../components/Hero.astro";
+import Layout from "../../layouts/Layout.astro";
+import MenuDisplay from "../../components/menu/MenuDisplay";
+import { getCollection } from "astro:content";
+
+const menuData = await getCollection("menu");
+
+const dishes = menuData.map((item) => ({
+  id: item.id,
+  ...item.data,
+}));
+
+const categories = [
+  "All",
+  ...new Set(menuData.map((item) => item.data.category)),
+];
+---
+
+<Layout title="Epicure - Menu">
+  <Hero
+    title="Our Menu"
+    subtitle="A curated selection of exceptional dishes"
+    actionButton={false}
+  />
+  <section class="py-20 bg-[#0a0a0a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p
+          class="text-[#d4af37] font-bold text-sm uppercase tracking-wider mb-2"
+        >
+          Fine Dining
+        </p>
+        <h1 class="font-serif text-4xl! font-bold text-white mb-4 text-balance">
+          Discover Our Offerings
+        </h1>
+        <p class="text-xl text-[#a0a0a0] max-w-2xl mx-auto">
+          Each dish is a testament to our commitment to culinary excellence
+        </p>
+      </div>
+
+      <MenuDisplay client:load {dishes} {categories} />
+    </div>
+  </section>
+</Layout>

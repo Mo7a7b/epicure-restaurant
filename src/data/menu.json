@@ -1,0 +1,83 @@
+[
+  {
+    "id": "1",
+    "name": "Pan-Seared Foie Gras",
+    "price": 48,
+    "category": "Appetizer",
+    "description": "Delicate foie gras with cherry gastrique and toasted brioche",
+    "image": "/images/pan-seared-foie-gras.jpg",
+    "slug": "pan-seared-foie-gras"
+  },
+  {
+    "id": "2",
+    "name": "Wagyu Beef Tenderloin",
+    "price": 68,
+    "category": "Main Course",
+    "description": "Japanese A5 wagyu with truffle butter and roasted seasonal vegetables",
+    "image": "/images/wagyu-beef-tenderloin.jpg",
+    "slug": "wagyu-beef-tenderloin"
+  },
+  {
+    "id": "3",
+    "name": "Dover Sole Meunière",
+    "price": 58,
+    "category": "Main Course",
+    "description": "Whole Dover sole with brown butter, lemon, and capers",
+    "image": "/images/dover-sole-meuniere.jpg",
+    "slug": "dover-sole-meuniere"
+  },
+  {
+    "id": "4",
+    "name": "Lobster Bisque",
+    "price": 28,
+    "category": "Appetizer",
+    "description": "Rich and creamy bisque with lobster chunks and cognac",
+    "image": "/images/lobster-bisque.jpg",
+    "slug": "lobster-bisque"
+  },
+  {
+    "id": "5",
+    "name": "Pigeon en Croûte",
+    "price": 52,
+    "category": "Main Course",
+    "description": "Roasted pigeon wrapped in pastry with foie gras mousse",
+    "image": "/images/pigeon-en-croute.jpg",
+    "slug": "pigeon-en-croute"
+  },
+  {
+    "id": "6",
+    "name": "Chocolate Soufflé",
+    "price": 16,
+    "category": "Dessert",
+    "description": "Warm dark chocolate soufflé with vanilla bean ice cream",
+    "image": "/images/chocolate-souffle.jpg",
+    "slug": "chocolate-souffle"
+  },
+  {
+    "id": "7",
+    "name": "Cured Salmon Canapés",
+    "price": 24,
+    "category": "Appetizer",
+    "description": "House-cured salmon with crème fraîche and dill on crispy bread",
+    "image": "/images/cured-salmon-canapes.jpg",
+    "slug": "cured-salmon-canapes"
+  },
+  {
+    "id": "8",
+    "name": "French Macarons",
+    "price": 14,
+    "category": "Dessert",
+    "description": "Assorted pistachio, rose, and lavender macarons",
+    "image": "/images/french-macarons.jpg",
+    "slug": "french-macarons"
+  },
+  {
+    "id": "9",
+    "name": "Truffle Risotto",
+    "price": 46,
+    "category": "Main Course",
+    "description": "Creamy Arborio rice with black truffle shavings and Parmigiano-Reggiano",
+    "image": "/images/truffle-risotto.jpg",
+    "slug": "truffle-risotto"
+  }
+]

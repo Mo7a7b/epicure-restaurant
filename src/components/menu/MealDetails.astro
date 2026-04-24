@@ -1,0 +1,153 @@
+---
+import { Image } from "astro:assets";
+import Button from "../ui/button.astro";
+
+interface Props {
+  slug: string;
+  name: string;
+  price: number;
+  image: string;
+  description: string;
+  ingredients: string[];
+  chefNote: string;
+  serves?: number;
+  prepTime?: number;
+}
+
+const {
+  slug,
+  name,
+  price,
+  image,
+  description,
+  ingredients,
+  chefNote,
+  serves = 1,
+  prepTime = 25,
+} = Astro.props;
+---
+
+<div>
+  <!-- Hero Image -->
+  <div class="relative w-full h-96 md:h-125 overflow-hidden">
+    <Image
+      transition:name={`${slug}-image`}
+      src={`/src/assets${image}`}
+      alt={name}
+      class="object-cover w-full h-full"
+      width={1920}
+      height={1080}
+    />
+    <div class="absolute inset-0 bg-black/30"></div>
+  </div>
+
+  <!-- Content -->
+  <section class="py-16 bg-[#0a0a0a]">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Title & Price -->
+      <div class="mb-8">
+        <div class="flex items-baseline justify-between mb-4">
+          <h1
+            transition:name={`${slug}-title`}
+            class="font-serif text-5xl! font-bold text-white"
+          >
+            {name}
+          </h1>
+          <span
+            transition:name={`${slug}-price`}
+            class="text-3xl font-bold text-[#d4af37]">${price}</span
+          >
+        </div>
+        <div class="flex gap-4 text-[#a0a0a0]">
+          <span class="flex items-center gap-2">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            {prepTime} minutes
+          </span>
+          <span class="flex items-center gap-2">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 0a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+            Serves {serves}
+          </span>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="prose prose-invert max-w-none mb-12">
+        <p
+          transition:name={`${slug}-description`}
+          class="text-lg text-[#a0a0a0] leading-relaxed"
+        >
+          {description}
+        </p>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-[#333333] my-12"></div>
+
+      <!-- Ingredients -->
+      <div class="mb-12">
+        <h2 class="font-serif text-3xl! font-bold text-white mb-6">
+          Ingredients
+        </h2>
+        <ul class="space-y-3">
+          {
+            ingredients.map((ingredient) => (
+              <li class="flex items-start gap-3">
+                <span class="text-[#d4af37] mt-1">•</span>
+                <span class="text-white">{ingredient}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Chef's Note -->
+      <div class="bg-[#1a1a1a] border border-[#d4af37]/30 rounded-lg p-8 mb-12">
+        <div class="flex items-start gap-3">
+          <svg
+            class="w-6 h-6 text-[#d4af37] shrink-0 mt-1"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+            ></path>
+          </svg>
+          <div>
+            <h3 class="font-serif text-xl! font-bold text-white mb-2">
+              Chef's Note
+            </h3>
+            <p class="text-[#a0a0a0] leading-relaxed">{chefNote}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <Button href="/menu" type="ghost" text="Back to Menu" />
+      </div>
+    </div>
+  </section>
+</div>

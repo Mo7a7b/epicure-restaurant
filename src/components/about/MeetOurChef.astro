@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+import chefPortrait from "../../assets/images/chef-portrait.jpg";
+---
+
+<section class="py-20 bg-[#0a0a0a] text-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2
+        class="font-(family-name:--font-playfair) text-4xl font-bold text-foreground mb-4"
+      >
+        Meet Our Chef
+      </h2>
+      <div class="w-12 h-1 bg-[#d4af37] mx-auto rounded-full"></div>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-100 justify-items-center"
+    >
+      <!-- Chef Image -->
+      <div class="md:col-span-1">
+        <div class="relative h-160 w-80 rounded-lg overflow-hidden">
+          <Image
+            src={chefPortrait}
+            alt="Chef Michel Beaumont"
+            class="object-cover w-full h-full"
+          />
+        </div>
+      </div>
+
+      <!-- Chef Bio -->
+      <div class="md:col-span-2 space-y-4">
+        <div>
+          <h3 class="font-serif text-2xl font-bold text-foreground">
+            Chef Michel Beaumont
+          </h3>
+          <p class="text-[#d4af37] font-semibold text-sm">Chef & Founder</p>
+        </div>
+
+        <p class="text-foreground leading-relaxed">
+          With over 25 years of culinary experience, Chef Michel Beaumont has
+          trained under some of the world's most renowned Michelin-starred
+          chefs. His innovative approach to classical French cuisine has earned
+          Epicure recognition and accolades from prestigious culinary guides.
+        </p>
+
+        <p class="text-foreground leading-relaxed">
+          Chef Michel's philosophy centers on respecting the ingredient,
+          honoring tradition while embracing innovation, and creating dishes
+          that tell a story. His passion for excellence extends beyond the
+          kitchen—he believes that hospitality and genuine care for guests are
+          essential to the dining experience.
+        </p>
+
+        <div class="space-y-2 pt-4">
+          <p class="text-sm! text-[#a0a0a0]">
+            <strong>Education:</strong> Le Cordon Bleu, Paris
+          </p>
+          <p class="text-sm! text-[#a0a0a0]">
+            <strong>Experience:</strong> Former sous chef at Restaurant L'Astrance,
+            Paris
+          </p>
+          <p class="text-sm! text-[#a0a0a0]">
+            <strong>Specialties:</strong> French cuisine, seasonal cooking, sustainable
+            ingredients
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

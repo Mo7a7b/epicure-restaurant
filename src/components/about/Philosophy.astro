@@ -1,0 +1,61 @@
+---
+const philosophyCards = [
+  {
+    title: "Ingredient Excellence",
+    description:
+      "We source only the finest, freshest ingredients from trusted suppliers and local farmers. Seasonality guides our menu, ensuring optimal flavor and quality.",
+    icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4",
+  },
+  {
+    title: "Technique & Innovation",
+    description:
+      "Classical French techniques form our foundation, while modern innovation brings freshness to our cuisine. We constantly push boundaries while respecting tradition.",
+    icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+  },
+  {
+    title: "Hospitality",
+    description:
+      "Every guest is treated with genuine care and attention. We strive to create an atmosphere where you feel truly welcomed and valued.",
+    icon: "M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+  },
+];
+---
+
+<section class="py-20 bg-[#1a1a1a]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="font-serif text-4xl font-bold text-white mb-4">
+        Our Philosophy
+      </h2>
+      <div class="w-12 h-1 bg-[#d4af37] mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        philosophyCards.map(({ title, description, icon }) => (
+          <div class="bg-[#0a0a0a] text-white rounded-lg p-8 border border-[#333333] hover:border-[#d4af37]/50 transition-colors">
+            <div class="w-12 h-12 bg-[#d4af37]/20 rounded-lg flex items-center justify-center mb-4">
+              <svg
+                class="w-6 h-6 text-[#d4af37]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d={icon}
+                />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl! font-bold text-white mb-3">
+              {title}
+            </h3>
+            <p class="text-[#a0a0a0] text-sm!">{description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

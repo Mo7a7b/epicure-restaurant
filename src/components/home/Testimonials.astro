@@ -1,0 +1,20 @@
+---
+import { getCollection } from "astro:content";
+import TestimonialCard from "../ui/testimonialCard.astro";
+const reviews = await getCollection("reviews");
+---
+
+<section class="bg-[#1a1a1a] py-20 flex flex-col items-center">
+  <p class="text-[#d4af37] font-bold mt-10">Guest Experiences</p>
+  <h2
+    class="font-(family-name:--font-playfair) font-bold text-4xl! md:text-5xl! mb-5 text-white"
+  >
+    What Our Guests Say
+  </h2>
+  <div class="w-20 h-1 bg-[#d4af37] rounded"></div>
+  <div
+    class="flex flex-col md:flex-row justify-evenly gap-5 w-full px-5 text-wrap mb-20 mt-20"
+  >
+    {reviews.map((review) => <TestimonialCard {...review.data} />)}
+  </div>
+</section>

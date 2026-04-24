@@ -1,0 +1,60 @@
+---
+interface Props {
+  href: string;
+  text: string;
+  type: "primary" | "ghost";
+}
+const { href, text, type } = Astro.props;
+---
+
+<button class="hero-actions">
+  <a href={href} class={`btn btn-${type}`}>{text}</a>
+</button>
+
+<style>
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+    animation: fadeUp 0.9s 0.3s ease both;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: #d4af37;
+    color: #1a1a1a;
+  }
+  .btn-primary:hover {
+    background: #e0c050;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(212, 175, 55, 0.4);
+  }
+
+  .btn-ghost {
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(6px);
+  }
+  .btn-ghost:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+    background: rgba(212, 175, 55, 0.08);
+    transform: translateY(-2px);
+  }
+</style>

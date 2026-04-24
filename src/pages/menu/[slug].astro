@@ -1,0 +1,19 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import MealDetails from "../../components/menu/MealDetails.astro";
+
+export async function getStaticPaths() {
+  const meals = await getCollection("meals");
+  return meals.map((meal) => ({
+    params: { slug: meal.data.slug },
+    props: { meal },
+  }));
+}
+
+const { meal } = Astro.props;
+---
+
+<Layout title={`Epicure - ${meal.data.name}`}>
+  <MealDetails {...meal.data} />
+</Layout>

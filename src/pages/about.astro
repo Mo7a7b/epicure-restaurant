@@ -1,0 +1,24 @@
+---
+import Hero from "../components/Hero.astro";
+import MediaText from "../components/MediaText.astro";
+import Layout from "../layouts/Layout.astro";
+import MeetOurChef from "../components/about/MeetOurChef.astro";
+import Philosophy from "../components/about/Philosophy.astro";
+import Awards from "../components/about/Awards.astro";
+---
+
+<Layout title="Epicure - About">
+  <Hero
+    title="Our Story"
+    subtitle="Crafting culinary excellence since our inception"
+    actionButton={false}
+  />
+  <MediaText
+    title="A Journey of Passion"
+    subtitle="Epicure was founded on a simple yet profound belief: that exceptional food has the power to transform moments into memories. What began as a dream by our head chef has evolved into one of the region's most celebrated fine dining establishments. Our commitment to excellence is unwavering. From the sourcing of ingredients to the final plating of each dish, every detail receives meticulous attention. We work directly with local farmers, sustainable fisheries, and specialty producers to ensure that only the finest ingredients grace our tables."
+    learnMore={false}
+  />
+  <MeetOurChef />
+  <Philosophy />
+  <Awards />
+</Layout>

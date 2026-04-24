@@ -1,0 +1,23 @@
+[
+    {
+        "id":"1",
+        "name":"Sarah Mitchell",
+        "role":"Food Critic",
+        "review":"Epicure offers an extraordinary culinary journey. Every dish is a masterpiece, and the service is impeccable.",
+        "rating":5
+    },
+    {
+        "id":"2",
+        "name":"James Chen",
+        "role":"Chef & Restaurateur",
+        "review":"The level of precision and artistry in each course is exceptional. A true testament to fine dining excellence.",
+        "rating":5
+    },
+    {
+        "id":"3",
+        "name":"Emma Thompson",
+        "role":"Michelin Guide Inspector",
+        "review":"An unforgettable experience from start to finish. The attention to detail is remarkable.",
+        "rating":5
+    }
+]
