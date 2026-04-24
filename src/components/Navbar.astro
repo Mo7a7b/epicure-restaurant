@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import logo from "../assets/logo.png";
 ---
 
 <nav
@@ -13,7 +12,7 @@ import logo from "../assets/logo.png";
         class="font-(family-name:--font-playfair) font-bold text-2xl flex gap-3 items-center text-[#d4af37] transition-colors"
         href="/"
       >
-        <Image src={logo} alt="Logo" width={50} height={50} />
+        <Image src="/assets/logo.png" alt="Logo" width={50} height={50} />
         Epicure
       </a>
       <div class="hidden md:flex items-center gap-8">

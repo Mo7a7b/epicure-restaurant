@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import MealCard from "../MealCard.tsx";
+import { getImage } from "astro:assets";
 
 const menu = await getCollection("menu");
 const featuredMenu = menu.filter((item, index) => index < 3);
@@ -14,9 +15,9 @@ const featuredMenu = menu.filter((item, index) => index < 3);
     class="flex flex-col md:flex-row justify-evenly items-center gap-5 w-full text-wrap mt-5 mb-20"
   >
     {
-      featuredMenu.map((item) => (
-        <MealCard client:load {...item.data} slug={item.data.slug} />
-      ))
+      featuredMenu.map(async (item) => {
+        return <MealCard client:load {...item.data} slug={item.data.slug} />;
+      })
     }
   </div>
 </section>

@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import chefPortrait from "../../assets/images/chef-portrait.jpg";
 ---
 
 <section class="py-20 bg-[#0a0a0a] text-white">
@@ -21,7 +20,9 @@ import chefPortrait from "../../assets/images/chef-portrait.jpg";
       <div class="md:col-span-1">
         <div class="relative h-160 w-80 rounded-lg overflow-hidden">
           <Image
-            src={chefPortrait}
+            src="/assets/images/chef-portrait.jpg"
+            width={400}
+            height={400}
             alt="Chef Michel Beaumont"
             class="object-cover w-full h-full"
           />

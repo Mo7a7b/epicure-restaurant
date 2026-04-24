@@ -1,3 +1,4 @@
+
 interface Props {
   name: string;
   price: number;
@@ -7,12 +8,12 @@ interface Props {
   slug: string;
 }
 
-export default function MealCard({ name, price, category, description, image, slug }: Props) {
+export default async function MealCard({ name, price, category, description, image, slug }: Props) {
   return (
     <a href={`/menu/${slug}`} className="meal-card">
       {/* Image Container */}
       <div className="card-image-wrapper">
-        <img style={{viewTransitionName: `${slug}-image`}} src={`/src/assets${image}`} alt={name} className="card-image" />
+        <img style={{viewTransitionName: `${slug}-image`}} src={image} alt={name} className="card-image" />
         <div className="card-overlay" />
 
         {/* Category Badge */}

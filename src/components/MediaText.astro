@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import kitchen from "../assets/images/restaurant-kitchen.jpg";
 interface Props {
   title: string;
   subtitle: string;
@@ -18,7 +17,7 @@ const { title, subtitle, learnMore } = Astro.props;
       width={600}
       height={500}
       quality="max"
-      src={kitchen}
+      src="/assets/images/restaurant-kitchen.jpg"
       alt="Epicure's Kitchen"
       class="rounded-lg"
     />

@@ -5,7 +5,7 @@
     "price": 48,
     "category": "Appetizer",
     "description": "Delicate foie gras with cherry gastrique and toasted brioche",
-    "image": "src/assets/images/pan-seared-foie-gras.jpg",
+    "image": "/assets/images/pan-seared-foie-gras.jpg",
     "slug": "pan-seared-foie-gras"
   },
   {
@@ -14,7 +14,7 @@
     "price": 68,
     "category": "Main Course",
     "description": "Japanese A5 wagyu with truffle butter and roasted seasonal vegetables",
-    "image": "/images/wagyu-beef-tenderloin.jpg",
+    "image": "/assets/images/wagyu-beef-tenderloin.jpg",
     "slug": "wagyu-beef-tenderloin"
   },
   {
@@ -23,7 +23,7 @@
     "price": 58,
     "category": "Main Course",
     "description": "Whole Dover sole with brown butter, lemon, and capers",
-    "image": "/images/dover-sole-meuniere.jpg",
+    "image": "/assets/images/dover-sole-meuniere.jpg",
     "slug": "dover-sole-meuniere"
   },
   {
@@ -32,7 +32,7 @@
     "price": 28,
     "category": "Appetizer",
     "description": "Rich and creamy bisque with lobster chunks and cognac",
-    "image": "/images/lobster-bisque.jpg",
+    "image": "/assets/images/lobster-bisque.jpg",
     "slug": "lobster-bisque"
   },
   {
@@ -41,7 +41,7 @@
     "price": 52,
     "category": "Main Course",
     "description": "Roasted pigeon wrapped in pastry with foie gras mousse",
-    "image": "/images/pigeon-en-croute.jpg",
+    "image": "/assets/images/pigeon-en-croute.jpg",
     "slug": "pigeon-en-croute"
   },
   {
@@ -50,7 +50,7 @@
     "price": 16,
     "category": "Dessert",
     "description": "Warm dark chocolate soufflé with vanilla bean ice cream",
-    "image": "/images/chocolate-souffle.jpg",
+    "image": "/assets/images/chocolate-souffle.jpg",
     "slug": "chocolate-souffle"
   },
   {
@@ -59,7 +59,7 @@
     "price": 24,
     "category": "Appetizer",
     "description": "House-cured salmon with crème fraîche and dill on crispy bread",
-    "image": "/images/cured-salmon-canapes.jpg",
+    "image": "/assets/images/cured-salmon-canapes.jpg",
     "slug": "cured-salmon-canapes"
   },
   {
@@ -68,7 +68,7 @@
     "price": 14,
     "category": "Dessert",
     "description": "Assorted pistachio, rose, and lavender macarons",
-    "image": "/images/french-macarons.jpg",
+    "image": "/assets/images/french-macarons.jpg",
     "slug": "french-macarons"
   },
   {
@@ -77,7 +77,7 @@
     "price": 46,
     "category": "Main Course",
     "description": "Creamy Arborio rice with black truffle shavings and Parmigiano-Reggiano",
-    "image": "/images/truffle-risotto.jpg",
+    "image": "/assets/images/truffle-risotto.jpg",
     "slug": "truffle-risotto"
   }
 ]

@@ -1,5 +1,4 @@
 ---
-import heroImg from "../assets/images/hero-restaurant.jpg";
 import Button from "./ui/button.astro";
 
 interface Props {
@@ -11,7 +10,10 @@ interface Props {
 const { title, subtitle, actionButton } = Astro.props;
 ---
 
-<section class="hero" style={`background-image: url('${heroImg.src}');`}>
+<section
+  class="hero"
+  style={`background-image: url('/assets/images/hero-restaurant.jpg');`}
+>
   <div class="hero-overlay"></div>
 
   <div class="hero-content">

@@ -1,6 +1,5 @@
 ---
 import Image from "astro/components/Image.astro";
-import logo from "../assets/logo.png";
 ---
 
 <footer class="bg-[#1a1a1a] border-t border-[#333333]">
@@ -11,7 +10,12 @@ import logo from "../assets/logo.png";
         <h3
           class="font-(family-name:--font-playfair) font-bold text-xl flex items-center gap-2 text-[#d4af37]! mb-4"
         >
-          <Image src={logo} alt="Epicure's Logo" width={40} height={40} />
+          <Image
+            src="/assets/logo.png"
+            alt="Epicure's Logo"
+            width={40}
+            height={40}
+          />
           Epicure
         </h3>
         <p class="text-muted-foreground text-sm leading-relaxed">
